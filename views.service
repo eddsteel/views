@@ -1,0 +1,15 @@
+[Unit]
+Description=Reviews of things (to try out a modern scala stack)
+Requires=docker.service
+After=docker.service
+
+[Service]
+ExecStartPre=-/usr/bin/docker kill views
+ExecStartPre=-/usr/bin/docker rm views
+ExecStartPre=-/usr/bin/docker pull eddsteel/views:latest
+Restart=always
+ExecStart=/usr/bin/docker run -i --name views -p 8080:8080 eddsteel/views:latest
+ExecStop=/usr/bin/docker stop -t 5 views
+
+[Install]
+WantedBy=local.target

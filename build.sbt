@@ -2,7 +2,6 @@
 name                            := "views"
 description                     := "Reviews of things (to try out a modern scala stack)"
 scalaVersion                    := "2.12.6"
-ensimeScalaVersion in ThisBuild := "2.12.6"
 organization                    := "com.eddsteel"
 version                         := "slice1"
 
